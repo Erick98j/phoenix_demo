@@ -17,6 +17,8 @@ defmodule QualitasWeb.Router do
   scope "/", QualitasWeb do
     pipe_through :browser
 
+    get "/", SessionController, :login
+
     get "/signup", AuthController, :signup
     post "/signup", AuthController, :create
     get "/login", SessionController, :login
@@ -32,9 +34,9 @@ defmodule QualitasWeb.Router do
 
     get "/policies", PageController, :policies
     get "/policies/all", PageController, :policies
-    get "/policies/to_due", PageController, :policies
-    get "/policies/cancelled", PageController, :policies
+    get "/policies/to_due", PageController, :to_due
     get "/policies/finished", PageController, :finished
+    get "/policies/cancelled", PageController, :cancelled
   end
 
   # Other scopes may use custom stacks.

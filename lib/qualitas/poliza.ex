@@ -46,7 +46,7 @@ defmodule Qualitas.Poliza do
 
   def get_policies_to_due do
     query = from p in Qualitas.Poliza,
-            where: p.estatus_de_pago == "Por cobrar",
+            where: p.estatus_de_pago == "Por cobrar" or p.estatus_de_pago == "Vencido",
             select: p
     Repo.all(query)
   end

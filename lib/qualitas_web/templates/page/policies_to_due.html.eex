@@ -29,12 +29,12 @@
 
                             <!-- Card Header - Dropdown -->
                             <div class="d-flex" id="filters">
-                                <a href="/policies/all" style="text-decoration: none" class="filter-btn active-info">
+                                <a href="/policies/all" style="text-decoration: none" class="filter-btn">
                                     <div>
                                         <h3>Todas <span>(<%= length(Qualitas.Poliza.get_policies) %>)</span></h3>
                                     </div>
                                 </a>
-                                <a href="/policies/to_due" style="text-decoration: none" class="filter-btn">
+                                <a href="/policies/to_due" style="text-decoration: none" class="filter-btn active-success">
                                     <div>
                                         <h3>Por cobrar <span>(<%= length(Qualitas.Poliza.get_policies_to_due) %>)</span></h3>
                                     </div>

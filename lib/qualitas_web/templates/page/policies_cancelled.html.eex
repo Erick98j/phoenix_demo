@@ -29,7 +29,7 @@
 
                             <!-- Card Header - Dropdown -->
                             <div class="d-flex" id="filters">
-                                <a href="/policies/all" style="text-decoration: none" class="filter-btn active-info">
+                                <a href="/policies/all" style="text-decoration: none" class="filter-btn">
                                     <div>
                                         <h3>Todas <span>(<%= length(Qualitas.Poliza.get_policies) %>)</span></h3>
                                     </div>
@@ -44,7 +44,7 @@
                                         <h3>Por renovar <span>(<%= length(Qualitas.Poliza.get_policies_finished) %>)</span></h3>
                                     </div>
                                 </a>
-                                <a href="/policies/cancelled" style="text-decoration: none" class="filter-btn ">
+                                <a href="/policies/cancelled" style="text-decoration: none" class="filter-btn active-danger">
                                     <div>
                                         <h3>Canceladas <span>(<%= length(Qualitas.Poliza.get_policies_cancelled) %>)</span></h3>
                                     </div>

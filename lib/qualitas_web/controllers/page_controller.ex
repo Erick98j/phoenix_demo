@@ -15,7 +15,25 @@ defmodule QualitasWeb.PageController do
 
     conn |>
     assign(:polizas, policies) |>
-    render("policies.html",
+    render("policies_finished.html",
+      layout: {QualitasWeb.LayoutView, "admin.html"})
+  end
+
+  def to_due(conn, _params) do
+    policies = Qualitas.Poliza.get_policies_to_due()
+
+    conn |>
+    assign(:polizas, policies) |>
+    render("policies_to_due.html",
+      layout: {QualitasWeb.LayoutView, "admin.html"})
+  end
+
+  def cancelled(conn, _params) do
+    policies = Qualitas.Poliza.get_policies_cancelled()
+
+    conn |>
+    assign(:polizas, policies) |>
+    render("policies_cancelled.html",
       layout: {QualitasWeb.LayoutView, "admin.html"})
   end
 
@@ -23,6 +41,5 @@ defmodule QualitasWeb.PageController do
       render(conn, "policy.html",
       layout: {QualitasWeb.LayoutView, "admin.html"})
   end
-
 
 end
